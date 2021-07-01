@@ -16,21 +16,13 @@ def visualize(mesh):
 def remesh(mesh):
     return mesh.simplify_quadric_decimation(target_number_of_triangles=14000)
 
-#<-------------Core Pipeline Begins-------------->
-
-#read input argument
-image_path = str(sys.argv[1])
-print('Input Image', image_path)
-
 #TODO: pose estimation
-print("Executing preprocessing - cropping and pose estimation")
-os.system("python .\lightweight-human-pose-estimation.pytorch\preprocess_img_pose.py "+image_path)
 
 #execute pifuHD as a script
 print("Executing PIFuHD")
-os.system("python -m pifuhd.apps.simple_test --use_rect -i "+image_path+" -o ./pifuhd/results -c ./pifuhd/checkpoints/pifuhd.pt")
+os.system("python -m pifuhd.apps.simple_test --use_rect -i ./pifuhd/sample_images -o ./pifuhd/results -c ./pifuhd/checkpoints/pifuhd.pt")
 
-'''#read generate mesh in open3D
+#read generate mesh in open3D
 mesh = o3d.io.read_triangle_mesh("./pifuhd/results/pifuhd_final/recon/result_IMG_3392.2_512.obj")
  #visualize original mesh
 print("Visualizing Original Mesh")
@@ -58,4 +50,4 @@ visualize(remesh)
 
 #execute RigNet as a script
 print("Executing RigNet")
-os.system("python ./RigNet/quick_start.py")'''
+os.system("python ./RigNet/quick_start.py")
