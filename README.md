@@ -20,8 +20,10 @@ The code has been tested on Windows 10 with cuda 10.1. The most important differ
 `pip install Rtree‑0.9.4‑cp37‑cp37m‑win_amd64.whl` (64-bit system) or
 `pip install Rtree‑0.9.4‑cp37‑cp37m‑win32.whl` (32-bit system). Other libraries can be installed in the same way as Linux setup instructions.
 
+## Getting the checkpoints
+Download the checkpoints into the base folder from [GDrive Link](https://drive.google.com/drive/folders/1mxUAOSpCZHdxcGYUGs9oJRvXkJOXzMEq?usp=sharing)
+
 ## Usage
-TODO: Checkpoints
 The given script takes input photo(from ./input folder) and stores all the results(to ./Results/<image name>). Example usage -
 ```
 python 3D_Avatar_Pipeline.py .\input\test.png
