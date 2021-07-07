@@ -1,3 +1,7 @@
 ./Results/*
 ./Screenshots/*
 ./input/*
+
+!./Results/.gitkeep
+!./Screenshots/.gitkeep
+!./input/.gitkeep
