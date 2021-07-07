@@ -1,3 +1,9 @@
 [submodule "Rignet"]
 	path = Rignet
 	url = https://github.com/zhan-xu/RigNet.git
+[submodule "pifuhd"]
+	path = pifuhd
+	url = https://github.com/facebookresearch/pifuhd
+[submodule "lightweight-human-pose-estimation.pytorch"]
+	path = lightweight-human-pose-estimation.pytorch
+	url = https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
