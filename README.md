@@ -2,7 +2,10 @@
 Realistic 3D Avatar Pipeline using PIFuHD - Pixel Aligned Implicit Functions and RigNet - Neural Rigging Network
 
 ## Dependency and Setup
-This project was tested in Windows 10 x64 System with Python 3.7 | Torch v1.8.0 TorchVision v0.9.0 on CPU with 16Gb of RAM using Anaconda Python Environment
+This project was tested in Windows 10 x64 System with Python 3.7 | Torch v1.8.0 TorchVision v0.9.0 on CPU with 16Gb of RAM using Anaconda Python Environment.
+
+### Constraints
+open3D supports only Python v3.6, 3.7 and 3.8
 
 ```
 conda create -n 3D_Avatar_Pipeline python=3.7

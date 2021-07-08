@@ -1,6 +1,7 @@
 ./Results/*
 ./Screenshots/*
 ./input/*
+./Checkpoints/*
 
 !./Results/.gitkeep
 !./Screenshots/.gitkeep

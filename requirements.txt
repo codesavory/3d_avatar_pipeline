@@ -3,25 +3,29 @@
 # `pip install -r requirements.txt`
 # Make sure you have pip installed!
 # To update just use `pip install -r requirements.txt --upgrade`
+# Note: Install in the same order to avoid dependency mismatch
+
+#Requirements for RigNet
+pip install numpy scipy matplotlib tensorboard open3d==0.9.0 opencv-python
+pip install "rtree>=0.8,<0.9"
+pip install trimesh[easy]
+pip install torch==1.8.0 torchvision==0.9.0
+pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-geometric
+
+#Visualization
+open3d
+pymeshlab
+pycocotools
 
 #Requirements for PIFuHD
-torch
-torchvision
 Pillow                # PIL
-scikit-image          #skimage
+scikit-image          # skimage
 tqdm
 opencv-python         # cv2
 trimesh
 PyOpenGL
 ffmpeg
-
-#Requirements for RigNet
-#pip install numpy scipy matplotlib tensorboard open3d==0.9.0 opencv-python
-#pip install "rtree>=0.8,<0.9"
-#pip install trimesh[easy]
-#conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch
-#pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.6.0+cu101.html
-#pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.6.0+cu101.html
-#pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-1.6.0+cu101.html
-#pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-1.6.0+cu101.html
-#pip install torch-geometric

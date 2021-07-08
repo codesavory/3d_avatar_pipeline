@@ -3,6 +3,7 @@
 import os
 import sys, getopt
 import open3d as o3d
+import pymeshlab
 from glob import glob
 
 #help usage
@@ -46,12 +47,18 @@ for file in glob(input_directory+"\*.txt"):
 
 #TODO: pose estimation
 print("Executing preprocessing - cropping and pose estimation")
-os.system("python .\lightweight-human-pose-estimation.pytorch\preprocess_img_pose.py "+image_path)
+exit_code = os.system("python preprocess_img_pose.py "+image_path)
+if exit_code > 0:
+    print("Error running preprocessing")
+    sys.exit(exit_code)
 os.system("cp ./input/"+filename_raw+"_rect.txt ./Results/"+filename_raw)
 
 #execute pifuHD as a script
 print("Executing PIFuHD")
-os.system("python -m pifuhd.apps.simple_test --use_rect -i "+input_directory+" -o "+output_directory+" -c ./pifuhd/checkpoints/pifuhd.pt")
+exit_code = os.system("python -m pifuhd.apps.simple_test --use_rect -i "+input_directory+" -o "+output_directory+" -c ./Checkpoints/pifuhd/pifuhd.pt")
+if exit_code > 0:
+    print("Error running PIFuHD")
+    sys.exit(exit_code)
 
 #copy original mesh and rename
 os.system("cp "+output_directory+"/pifuhd_final/recon/result_"+filename_raw+"_512.obj "+output_directory)
@@ -72,7 +79,6 @@ visualize(mesh)
 #o3d.io.write_triangle_mesh("./Results/suriya_remesh.obj", remesh)
 
 #reduce mesh using PyMeshLab
-import pymeshlab
 print("Remeshing using Simplification: Quadric Edge Collapse Decimation by MeshLab")
 ms = pymeshlab.MeshSet()
 ms.load_new_mesh(output_directory+'/result_'+filename_raw+"_512.obj")
@@ -88,4 +94,7 @@ visualize(remesh)
 
 #execute RigNet as a script
 print("Executing RigNet")
-os.system("python ./RigNet/quick_start.py "+filename_raw)
+exit_code = os.system("python rignet_script.py "+filename_raw)
+if exit_code > 0:
+    print("Error running RigNet")
+    sys.exit(exit_code)
