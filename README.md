@@ -22,7 +22,22 @@ git submodule update
 
 ### Install Necessary Libraries
 ```
+pip install torch==1.8.0 torchvision==0.9.0
 pip install -r requirements.txt
+```
+
+# If using CUDA 10.1 (TO TEST)
+```
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
+```
+
+### Install some torch depencies
+```
+pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-1.8.0+cu101.html
+pip install torch-geometric
 ```
 
 #### For Windows user
