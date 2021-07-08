@@ -6,10 +6,14 @@
 # Note: Install in the same order to avoid dependency mismatch
 
 #Requirements for RigNet
-pip install numpy scipy matplotlib tensorboard open3d==0.9.0 opencv-python
-pip install "rtree>=0.8,<0.9"
-pip install trimesh[easy]
-pip install torch==1.8.0 torchvision==0.9.0
+numpy
+scipy
+matplotlib
+tensorboard
+open3d==0.9.0
+opencv-python
+rtree>=0.8,<0.9
+trimesh[easy]
 
 #Visualization
 open3d

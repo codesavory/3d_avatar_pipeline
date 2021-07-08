@@ -1,4 +1,4 @@
-# 3d_avatar_pipeline
+# Realistic 3D Avatar Pipeline in Realtime
 Realistic 3D Avatar Pipeline using PIFuHD - Pixel Aligned Implicit Functions and RigNet - Neural Rigging Network
 
 ## Dependency and Setup
@@ -26,7 +26,7 @@ pip install torch==1.8.0 torchvision==0.9.0
 pip install -r requirements.txt
 ```
 
-# If using CUDA 10.1 (TO TEST)
+## If using CUDA 10.1 (TO TEST)
 ```
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
 ```
